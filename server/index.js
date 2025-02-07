@@ -4,7 +4,10 @@ import { connectDb } from './database/db.js';
 
 dotenv.config();
 
-const app = express()
+const app = express();
+
+app.use(express.json());
+
 const port = process.env.PORT;
 
 app.get('/',(req,res)=> {
