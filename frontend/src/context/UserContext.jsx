@@ -103,7 +103,7 @@ export const UserContextProvider = ({ children }) => {
         loading,
         registerUser,
         verifyOtp,
-        // fetchUser,
+        fetchUser,
       }}
     >
       {children}
