@@ -14,6 +14,8 @@ import Loading from "./components/loading/Loading";
 import Courses from "./pages/courses/courses";
 import CourseDescription from "./pages/coursedescription/CourseDescription";
 import PaymentSuccess from "./pages/paymentsuccess/PaymentSuccess";
+import Dashbord from "./pages/dashbord/Dashbord";
+import CourseStudy from "./pages/coursestudy/CourseStudy";
 
 const App = () => {
   const { isAuth, user, loading } = UserData();
@@ -46,6 +48,14 @@ const App = () => {
             <Route
               path="/payment-success/:id"
               element={isAuth ? <PaymentSuccess user={user} /> : <Login />}
+            />
+            <Route
+              path="/:id/dashboard"
+              element={isAuth ? <Dashbord user={user} /> : <Login />}
+            />
+            <Route
+              path="/course/study/:id"
+              element={isAuth ? <CourseStudy user={user} /> : <Login />}
             />
           </Routes>
           <Footer />
