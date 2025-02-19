@@ -17,6 +17,11 @@ import PaymentSuccess from "./pages/paymentsuccess/PaymentSuccess";
 import Dashbord from "./pages/dashbord/Dashbord";
 import CourseStudy from "./pages/coursestudy/CourseStudy";
 import Lecture from "./pages/lecture/Lecture";
+import AdminDashbord from "./admin/Dashboard/AdminDashbord";
+import AdminCourses from "./admin/Courses/AdminCourses";
+import AdminUsers from "./admin/Users/AdminUsers";
+import ForgotPassword from "./pages/auth/ForgotPassword";
+import ResetPassword from "./pages/auth/ResetPassword";
 
 const App = () => {
   const { isAuth, user, loading } = UserData();
@@ -43,6 +48,14 @@ const App = () => {
             />
             <Route path="/verify" element={isAuth ? <Home /> : <Verify />} />
             <Route
+              path="/reset-password/:token"
+              element={isAuth ? <Home /> : <ResetPassword />}
+            />
+            <Route
+              path="/forgot"
+              element={isAuth ? <Home /> : <ForgotPassword />}
+            />
+            <Route
               path="/course/:id"
               element={isAuth ? <CourseDescription /> : <Login />}
             />
@@ -61,6 +74,18 @@ const App = () => {
             <Route
               path="/lectures/:id"
               element={isAuth ? <Lecture user={user} /> : <Login />}
+            />
+            <Route
+              path="/admin/dashboard"
+              element={isAuth ? <AdminDashbord user={user} /> : <Login />}
+            />
+            <Route
+              path="/admin/course"
+              element={isAuth ? <AdminCourses user={user} /> : <Login />}
+            />
+            <Route
+              path="/admin/users"
+              element={isAuth ? <AdminUsers user={user} /> : <Login />}
             />
           </Routes>
           <Footer />
