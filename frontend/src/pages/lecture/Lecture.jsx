@@ -273,10 +273,10 @@ const Lecture = ({ user }) => {
                         progress[0].completedLectures.includes(e._id) && (
                           <span
                             style={{
-                              background: "red",
+                              background: "#8a4baf",
                               padding: "2px",
                               borderRadius: "6px",
-                              color: "greenyellow",
+                              color: "white", 
                             }}
                           >
                             <TiTick />
